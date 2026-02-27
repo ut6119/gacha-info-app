@@ -1,0 +1,20 @@
+[
+  {
+    "id": "x_sample_1",
+    "platform": "X",
+    "username": "@gacha_news",
+    "content": "ガシャポン新作の先行情報が公開されました。今月末発売予定です。",
+    "url": "https://x.com/gacha_news/status/1900000000000000001",
+    "postedAt": "2026-02-27T10:20:00Z",
+    "matchedKeyword": "ガシャポン 新商品"
+  },
+  {
+    "id": "x_sample_2",
+    "platform": "X",
+    "username": "@capsule_info",
+    "content": "たまごっち新作ガチャが来月登場。ラインナップ画像あり。",
+    "url": "https://x.com/capsule_info/status/1900000000000000002",
+    "postedAt": "2026-02-27T08:45:00Z",
+    "matchedKeyword": "たまごっち ガチャ"
+  }
+]
