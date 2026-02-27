@@ -7,7 +7,7 @@
     "releaseDate": "2026-03-15",
     "priceYen": 400,
     "sourceLabel": "BANDAI ガシャポン",
-    "sourceUrl": "https://gashapon.jp/",
+    "sourceUrl": "https://gashapon.jp/products/detail.php?jan_code=4582769793298",
     "imageUrl": null,
     "summary": "メーカー公式新商品ページ掲載のカプセルトイ情報。",
     "tags": [
@@ -18,7 +18,7 @@
     "marketPrices": [
       {
         "marketplace": "メルカリ",
-        "searchUrl": "https://jp.mercari.com/search?keyword=%E3%82%B5%E3%83%B3%E3%83%AA%E3%82%AA%20%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB%E3%83%A9%E3%83%90%E3%83%BC",
+        "searchUrl": "https://jp.mercari.com/search?keyword=%E3%82%B5%E3%83%B3%E3%83%AA%E3%82%AA%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC%E3%82%BA%20%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB%E3%83%A9%E3%83%90%E3%83%BC%E3%83%9E%E3%82%B9%E3%82%B3%E3%83%83%E3%83%88",
         "sampleCount": 18,
         "minPriceYen": 320,
         "medianPriceYen": 740,
@@ -27,7 +27,7 @@
       },
       {
         "marketplace": "Yahoo!フリマ",
-        "searchUrl": "https://paypayfleamarket.yahoo.co.jp/search/%E3%82%B5%E3%83%B3%E3%83%AA%E3%82%AA%20%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB",
+        "searchUrl": "https://paypayfleamarket.yahoo.co.jp/search/%E3%82%B5%E3%83%B3%E3%83%AA%E3%82%AA%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC%E3%82%BA%20%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB%E3%83%A9%E3%83%90%E3%83%BC%E3%83%9E%E3%82%B9%E3%82%B3%E3%83%83%E3%83%88",
         "sampleCount": 9,
         "minPriceYen": 350,
         "medianPriceYen": 690,
@@ -44,7 +44,7 @@
     "releaseDate": "2026-03-22",
     "priceYen": 300,
     "sourceLabel": "タカラトミーアーツ",
-    "sourceUrl": "https://www.takaratomy-arts.co.jp/",
+    "sourceUrl": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y4904790",
     "imageUrl": null,
     "summary": "メーカーサイトから取得した新作案内。",
     "tags": [
@@ -55,7 +55,7 @@
     "marketPrices": [
       {
         "marketplace": "メルカリ",
-        "searchUrl": "https://jp.mercari.com/search?keyword=%E3%81%9F%E3%81%BE%E3%81%94%E3%81%A3%E3%81%A1%20%E3%82%AC%E3%83%81%E3%83%A3",
+        "searchUrl": "https://jp.mercari.com/search?keyword=%E3%81%9F%E3%81%BE%E3%81%94%E3%81%A3%E3%81%A1%20%E3%83%9F%E3%83%8B%E3%83%81%E3%83%A5%E3%82%A2%E3%83%81%E3%83%A3%E3%83%BC%E3%83%A0%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3",
         "sampleCount": 21,
         "minPriceYen": 300,
         "medianPriceYen": 780,
@@ -72,7 +72,7 @@
     "releaseDate": "2026-04-01",
     "priceYen": 500,
     "sourceLabel": "ケンエレファント",
-    "sourceUrl": "https://kenelephant.co.jp/",
+    "sourceUrl": "https://kenelephant.co.jp/gc0244/",
     "imageUrl": null,
     "summary": "公式ニュースから抽出した新規カプセルトイ。",
     "tags": [
@@ -83,7 +83,7 @@
     "marketPrices": [
       {
         "marketplace": "Yahoo!フリマ",
-        "searchUrl": "https://paypayfleamarket.yahoo.co.jp/search/%E3%83%AC%E3%83%88%E3%83%AD%20%E8%87%AA%E8%B2%A9%E6%A9%9F%20%E3%83%9F%E3%83%8B%E3%83%81%E3%83%A5%E3%82%A2",
+        "searchUrl": "https://paypayfleamarket.yahoo.co.jp/search/%E3%83%AC%E3%83%88%E3%83%AD%E8%87%AA%E8%B2%A9%E6%A9%9F%20%E3%83%9F%E3%83%8B%E3%83%81%E3%83%A5%E3%82%A2%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3",
         "sampleCount": 8,
         "minPriceYen": 450,
         "medianPriceYen": 980,

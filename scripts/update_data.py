@@ -277,8 +277,8 @@ def build_release_entry(item: dict, spec: dict, now: datetime) -> dict:
     }
 
 
-def build_market_search_url(marketplace_name: str, keyword: str) -> str:
-    encoded = quote(keyword)
+def build_market_search_url(marketplace_name: str, product_name: str) -> str:
+    encoded = quote(product_name)
     if marketplace_name == "メルカリ":
         return f"https://jp.mercari.com/search?keyword={encoded}"
     if marketplace_name == "Yahoo!フリマ":
@@ -286,10 +286,10 @@ def build_market_search_url(marketplace_name: str, keyword: str) -> str:
     return f"https://duckduckgo.com/?q={encoded}"
 
 
-def collect_market_prices_for_keyword(keyword: str, now: datetime) -> list[dict]:
+def collect_market_prices_for_keyword(product_name: str, now: datetime) -> list[dict]:
     outputs = []
     for spec in MARKETPLACE_SPECS:
-        query = f"site:{spec['domain']} {keyword}"
+        query = f"site:{spec['domain']} {product_name}"
         try:
             results = search_duckduckgo(query, max_results=10)
         except FetchError:
@@ -316,7 +316,7 @@ def collect_market_prices_for_keyword(keyword: str, now: datetime) -> list[dict]
         outputs.append(
             {
                 "marketplace": spec["name"],
-                "searchUrl": build_market_search_url(spec["name"], keyword),
+                "searchUrl": build_market_search_url(spec["name"], product_name),
                 "sampleCount": len(prices),
                 "minPriceYen": prices[0],
                 "medianPriceYen": median_price,
@@ -332,17 +332,16 @@ def collect_market_prices_for_keyword(keyword: str, now: datetime) -> list[dict]
 def enrich_release_market_prices(releases: list[dict], now: datetime):
     cache = {}
     for release in releases:
-        query_parts = [release.get("series") or "", release.get("title") or ""]
-        query = clean_text(" ".join(query_parts))
-        if not query:
+        product_name = clean_text(release.get("title") or "")
+        if not product_name:
             release["marketPrices"] = []
             continue
 
-        if query in cache:
-            market_prices = cache[query]
+        if product_name in cache:
+            market_prices = cache[product_name]
         else:
-            market_prices = collect_market_prices_for_keyword(query, now)
-            cache[query] = market_prices
+            market_prices = collect_market_prices_for_keyword(product_name, now)
+            cache[product_name] = market_prices
 
         release["marketPrices"] = market_prices
         if market_prices and "中古相場" not in release["tags"]:
@@ -363,6 +362,9 @@ def collect_releases() -> list[dict]:
         for item in results:
             url = item["url"]
             if spec["domain"] not in url:
+                continue
+            parsed = urlparse(url)
+            if not parsed.path or parsed.path == "/":
                 continue
             if url in seen_urls:
                 continue
@@ -504,14 +506,14 @@ def seed_releases() -> list[dict]:
             "releaseDate": "2026-03-15",
             "priceYen": 400,
             "sourceLabel": "BANDAI ガシャポン",
-            "sourceUrl": "https://gashapon.jp/",
+            "sourceUrl": "https://gashapon.jp/products/",
             "imageUrl": None,
             "summary": "初期データ: 取得失敗時に表示するサンプルです。",
             "tags": ["新作", "サンプル", "中古相場"],
             "marketPrices": [
                 {
                     "marketplace": "メルカリ",
-                    "searchUrl": "https://jp.mercari.com/search?keyword=%E3%82%B5%E3%83%B3%E3%83%AA%E3%82%AA%20%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB%E3%83%A9%E3%83%90%E3%83%BC%E3%83%9E%E3%82%B9%E3%82%B3%E3%83%83%E3%83%88",
+                    "searchUrl": "https://jp.mercari.com/search?keyword=%E3%82%B5%E3%83%B3%E3%83%AA%E3%82%AA%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC%E3%82%BA%20%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB%E3%83%A9%E3%83%90%E3%83%BC%E3%83%9E%E3%82%B9%E3%82%B3%E3%83%83%E3%83%88",
                     "sampleCount": 12,
                     "minPriceYen": 300,
                     "medianPriceYen": 680,

@@ -184,9 +184,7 @@ class _ReleaseCard extends StatelessWidget {
                 TextButton.icon(
                   onPressed: () => _openUrl(release.sourceUrl),
                   icon: const Icon(Icons.open_in_new, size: 18),
-                  label: Text(
-                    release.sourceLabel.isEmpty ? '公式サイト' : release.sourceLabel,
-                  ),
+                  label: const Text('商品ページ'),
                 ),
               ],
             ),
@@ -194,7 +192,7 @@ class _ReleaseCard extends StatelessWidget {
             InkWell(
               onTap: () => _openUrl(release.sourceUrl),
               child: Text(
-                '公式URL: ${_displayUrl(release.sourceUrl)}',
+                '商品URL: ${_displayUrl(release.sourceUrl)}',
                 style: const TextStyle(
                   fontSize: 12,
                   color: Color(0xFF154A78),
