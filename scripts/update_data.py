@@ -83,6 +83,19 @@ DATE_WITH_YEAR = re.compile(
 )
 DATE_NO_YEAR = re.compile(r"(\d{1,2})\s*[./\-月]\s*(\d{1,2})\s*(?:日)?")
 PRICE_PATTERN = re.compile(r"(?:¥|￥)?\s*([0-9][0-9,]{2,})\s*円?")
+NON_PRODUCT_PATH_PREFIXES = [
+    "/about",
+    "/contact",
+    "/recruit",
+    "/search",
+    "/feed",
+    "/newsed",
+    "/books",
+    "/vinyl",
+    "/wp-",
+]
+
+URL_CHECK_CACHE: dict[str, bool] = {}
 
 
 class FetchError(RuntimeError):
@@ -107,6 +120,55 @@ def fetch_html(url: str) -> str:
         return response.text
     except Exception as exc:
         raise FetchError(str(exc)) from exc
+
+
+def looks_like_product_url(url: str) -> bool:
+    try:
+        parsed = urlparse(url)
+    except Exception:
+        return False
+
+    if not parsed.scheme.startswith("http"):
+        return False
+
+    path = parsed.path or "/"
+    normalized_path = path.rstrip("/") or "/"
+    query = parsed.query or ""
+
+    for prefix in NON_PRODUCT_PATH_PREFIXES:
+        if normalized_path.startswith(prefix.rstrip("/")):
+            return False
+
+    if normalized_path == "/":
+        # Some sites use query id-style product pages, e.g. ?p=12345
+        if re.search(r"(?:^|&)(?:p|item|product|id)=", query):
+            return True
+        return False
+
+    return True
+
+
+def is_live_url(url: str) -> bool:
+    cached = URL_CHECK_CACHE.get(url)
+    if cached is not None:
+        return cached
+
+    ok = False
+    try:
+        response = requests.get(
+            url,
+            headers=HEADERS,
+            timeout=TIMEOUT_SECONDS,
+            allow_redirects=True,
+            stream=True,
+        )
+        ok = 200 <= response.status_code < 400
+        response.close()
+    except Exception:
+        ok = False
+
+    URL_CHECK_CACHE[url] = ok
+    return ok
 
 
 def normalize_ddg_url(url: str) -> str:
@@ -363,8 +425,9 @@ def collect_releases() -> list[dict]:
             url = item["url"]
             if spec["domain"] not in url:
                 continue
-            parsed = urlparse(url)
-            if not parsed.path or parsed.path == "/":
+            if not looks_like_product_url(url):
+                continue
+            if not is_live_url(url):
                 continue
             if url in seen_urls:
                 continue
