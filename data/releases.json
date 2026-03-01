@@ -1,94 +1,337 @@
 [
   {
-    "id": "rel_sample_bandai_1",
-    "title": "サンリオキャラクターズ カプセルラバーマスコット",
-    "manufacturer": "BANDAI",
-    "series": "サンリオ",
-    "releaseDate": "2026-03-15",
-    "priceYen": 400,
-    "sourceLabel": "BANDAI ガシャポン",
-    "sourceUrl": "https://gashapon.jp/products/detail.php?jan_code=4582769793298",
+    "id": "rel_8b068d920456",
+    "title": "『しーぷらじお』オリジナルカプセルトイが3月19日より販売開始！",
+    "manufacturer": "C-pla（シープラ）",
+    "series": null,
+    "releaseDate": "2026-02-01",
+    "priceYen": 2026,
+    "sourceLabel": "C-pla公式（トーシン）",
+    "sourceUrl": "https://toshin.jpn.com/%e3%80%8e%e3%81%97%e3%83%bc%e3%81%b7%e3%82%89%e3%81%98%e3%81%8a%e3%80%8f%e3%82%aa%e3%83%aa%e3%82%b8%e3%83%8a%e3%83%ab%e3%82%ab%e3%83%97%e3%82%bb%e3%83%ab%e3%83%88%e3%82%a4%e3%81%8c3%e6%9c%8819/",
     "imageUrl": null,
-    "summary": "メーカー公式新商品ページ掲載のカプセルトイ情報。",
+    "summary": "現在株式会社文化放送にて放送中のラジオ番組『#C-pla presents ＝LOVE 齋藤樹愛羅・≠ME櫻井もものしーぷらじお』のカプセルトイ『しーぷらじお つながるアクリルチャーム』を2026年3月19日より全国の# […] The post 『しーぷらじお』オリジナルカプセルトイが3月19日より販売開始！ first appeared on 株式会社トーシン .",
     "tags": [
       "新作",
-      "公式",
+      "シープラ",
+      "新商品",
+      "#C-pla",
+      "カプセルトイ"
+    ],
+    "marketPrices": []
+  },
+  {
+    "id": "rel_45e9b03ba487",
+    "title": "SNOW MIKU×＃C-pla コラボキャンペーン2026年2月4日（水）〜開催 北海道店舗で限定商品を先行発売＆ノベルティ配布",
+    "manufacturer": "C-pla（シープラ）",
+    "series": null,
+    "releaseDate": "2026-01-30",
+    "priceYen": 2026,
+    "sourceLabel": "C-pla公式（トーシン）",
+    "sourceUrl": "https://toshin.jpn.com/snow-mikux%ef%bc%83c-pla-%e3%82%b3%e3%83%a9%e3%83%9c%e3%82%ad%e3%83%a3%e3%83%b3%e3%83%9a%e3%83%bc%e3%83%b32026%e5%b9%b42%e6%9c%884%e6%97%a5%ef%bc%88%e6%b0%b4%ef%bc%89%e3%80%9c%e9%96%8b%e5%82%ac/",
+    "imageUrl": null,
+    "summary": "2026年2月4日(水)より「雪ミク(初音ミク)」のフェスティバル「SNOW MIKU 2026」とコラボした限定商品の先行発売や、雪ミクのデザインがあしらわれたノベルティ配布などを北海道店舗限定にて行います！ ■「SN […] The post SNOW MIKU×＃C-pla コラボキャンペーン2026年2月4日（水）〜開催 北海道店舗で限定商品を先行発売＆ノベルティ配布 first appeared on 株式会社トーシン .",
+    "tags": [
+      "新作",
+      "シープラ",
+      "入荷案内",
+      "新商品",
+      "#C-pla",
+      "カプセルトイ",
       "中古相場"
     ],
     "marketPrices": [
       {
         "marketplace": "メルカリ",
-        "searchUrl": "https://jp.mercari.com/search?keyword=%E3%82%B5%E3%83%B3%E3%83%AA%E3%82%AA%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC%E3%82%BA%20%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB%E3%83%A9%E3%83%90%E3%83%BC%E3%83%9E%E3%82%B9%E3%82%B3%E3%83%83%E3%83%88",
-        "sampleCount": 18,
-        "minPriceYen": 320,
-        "medianPriceYen": 740,
-        "maxPriceYen": 2200,
-        "updatedAt": "2026-02-27T22:00:00+09:00"
-      },
-      {
-        "marketplace": "Yahoo!フリマ",
-        "searchUrl": "https://paypayfleamarket.yahoo.co.jp/search/%E3%82%B5%E3%83%B3%E3%83%AA%E3%82%AA%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC%E3%82%BA%20%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB%E3%83%A9%E3%83%90%E3%83%BC%E3%83%9E%E3%82%B9%E3%82%B3%E3%83%83%E3%83%88",
-        "sampleCount": 9,
-        "minPriceYen": 350,
-        "medianPriceYen": 690,
-        "maxPriceYen": 1700,
-        "updatedAt": "2026-02-27T22:00:00+09:00"
+        "searchUrl": "https://jp.mercari.com/search?keyword=SNOW%20MIKU%C3%97%EF%BC%83C-pla%20%E3%82%B3%E3%83%A9%E3%83%9C%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%9A%E3%83%BC%E3%83%B32026%E5%B9%B42%E6%9C%884%E6%97%A5%EF%BC%88%E6%B0%B4%EF%BC%89%E3%80%9C%E9%96%8B%E5%82%AC%20%E5%8C%97%E6%B5%B7%E9%81%93%E5%BA%97%E8%88%97%E3%81%A7%E9%99%90%E5%AE%9A%E5%95%86%E5%93%81%E3%82%92%E5%85%88%E8%A1%8C%E7%99%BA%E5%A3%B2%EF%BC%86%E3%83%8E%E3%83%99%E3%83%AB%E3%83%86%E3%82%A3%E9%85%8D%E5%B8%83&status=sold_out",
+        "sampleCount": 10,
+        "minPriceYen": 800,
+        "medianPriceYen": 1250,
+        "maxPriceYen": 5000,
+        "updatedAt": "2026-03-01T22:18:39.816165+09:00"
       }
     ]
   },
   {
-    "id": "rel_sample_ta_1",
-    "title": "たまごっち ミニチュアチャームコレクション",
-    "manufacturer": "タカラトミーアーツ",
-    "series": "たまごっち",
-    "releaseDate": "2026-03-22",
-    "priceYen": 300,
-    "sourceLabel": "タカラトミーアーツ",
-    "sourceUrl": "https://www.takaratomy-arts.co.jp/items/item.html?n=Y4904790",
+    "id": "rel_86f273d6555b",
+    "title": "北海道の名物をカプセルトイに！『ミニチュア北海道 vol.4』発売中！",
+    "manufacturer": "C-pla（シープラ）",
+    "series": null,
+    "releaseDate": "2025-12-26",
+    "priceYen": 2025,
+    "sourceLabel": "C-pla公式（トーシン）",
+    "sourceUrl": "https://toshin.jpn.com/%e5%8c%97%e6%b5%b7%e9%81%93%e3%81%ae%e5%90%8d%e7%89%a9%e3%82%92%e3%82%ab%e3%83%97%e3%82%bb%e3%83%ab%e3%83%88%e3%82%a4%e3%81%ab%ef%bc%81%e3%80%8e%e3%83%9f%e3%83%8b%e3%83%81%e3%83%a5%e3%82%a2%e5%8c%97/",
     "imageUrl": null,
-    "summary": "メーカーサイトから取得した新作案内。",
+    "summary": "北海道の“美味しいものたち”が手のひらサイズのかわいいフィギュアになりました！ 2025年12月下旬より『ミニチュア北海道 vol.4』が全国のカプセルトイ専門店＃C-pla他北海道内カプセルトイ自販機で販売中です。 北 […] The post 北海道の名物をカプセルトイに！『ミニチュア北海道 vol.4』発売中！ first appeared on 株式会社トーシン .",
     "tags": [
       "新作",
-      "人気IP",
+      "シープラ",
+      "#C-pla",
+      "カプセルトイ",
+      "新商品",
+      "入荷案内",
       "中古相場"
     ],
     "marketPrices": [
       {
         "marketplace": "メルカリ",
-        "searchUrl": "https://jp.mercari.com/search?keyword=%E3%81%9F%E3%81%BE%E3%81%94%E3%81%A3%E3%81%A1%20%E3%83%9F%E3%83%8B%E3%83%81%E3%83%A5%E3%82%A2%E3%83%81%E3%83%A3%E3%83%BC%E3%83%A0%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3",
-        "sampleCount": 21,
+        "searchUrl": "https://jp.mercari.com/search?keyword=%E5%8C%97%E6%B5%B7%E9%81%93%E3%81%AE%E5%90%8D%E7%89%A9%E3%82%92%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB%E3%83%88%E3%82%A4%E3%81%AB%EF%BC%81%E3%80%8E%E3%83%9F%E3%83%8B%E3%83%81%E3%83%A5%E3%82%A2%E5%8C%97%E6%B5%B7%E9%81%93%20vol.4%E3%80%8F%E7%99%BA%E5%A3%B2%E4%B8%AD%EF%BC%81&status=sold_out",
+        "sampleCount": 1,
+        "minPriceYen": 400,
+        "medianPriceYen": 400,
+        "maxPriceYen": 400,
+        "updatedAt": "2026-03-01T22:18:39.816165+09:00"
+      }
+    ]
+  },
+  {
+    "id": "rel_e6c9ed41f737",
+    "title": "カプセルトイ『大人のセボンスター ハートキーペンダント』のお問い合わせについて",
+    "manufacturer": "C-pla（シープラ）",
+    "series": null,
+    "releaseDate": "2025-11-06",
+    "priceYen": 925,
+    "sourceLabel": "C-pla公式（トーシン）",
+    "sourceUrl": "https://toshin.jpn.com/%e5%a4%a7%e4%ba%ba%e3%81%ae%e3%82%bb%e3%83%9c%e3%83%b3%e3%82%b9%e3%82%bf%e3%83%bcfaq/",
+    "imageUrl": null,
+    "summary": "カプセルトイ『大人のセボンスター ハートキーペンダント』について、お問い合わせを多数いただいております。 内容をFAQにまとめましたので、下記ご確認ください。 Q.宝石部分はイミテーションですか。天然石です […] The post カプセルトイ『大人のセボンスター ハートキーペンダント』のお問い合わせについて first appeared on 株式会社トーシン .",
+    "tags": [
+      "新作",
+      "シープラ",
+      "新商品",
+      "#C-pla"
+    ],
+    "marketPrices": []
+  },
+  {
+    "id": "rel_6c39dfa6dc7f",
+    "title": "6月5日より『ブレイブリーデフォルト フライングフェアリー HDリマスター』の#C-pla限定カプセルトイが発売開始！Xではプレゼントキャンペーンも開催！",
+    "manufacturer": "C-pla（シープラ）",
+    "series": null,
+    "releaseDate": "2025-06-02",
+    "priceYen": 2025,
+    "sourceLabel": "C-pla公式（トーシン）",
+    "sourceUrl": "https://toshin.jpn.com/6%e6%9c%885%e6%97%a5%e3%82%88%e3%82%8a%e3%80%8e%e3%83%96%e3%83%ac%e3%82%a4%e3%83%96%e3%83%aa%e3%83%bc%e3%83%87%e3%83%95%e3%82%a9%e3%83%ab%e3%83%88-%e3%83%95%e3%83%a9%e3%82%a4%e3%83%b3%e3%82%b0/",
+    "imageUrl": null,
+    "summary": "2025年6月5日(木)発売される『ブレイブリーデフォルト フライングフェアリー HDリマスター』に合わせ、全国の#C-pla限定で「ブレイブリーデフォルト フライングフェアリー HDリマスター ミニアクリルブロックコレ […] The post 6月5日より『ブレイブリーデフォルト フライングフェアリー HDリマスター』の#C-pla限定カプセルトイが発売開始！Xではプレゼントキャンペーンも開催！ first appeared on 株式会社トーシン .",
+    "tags": [
+      "新作",
+      "シープラ",
+      "新商品",
+      "#C-pla",
+      "カプセルトイ",
+      "中古相場"
+    ],
+    "marketPrices": [
+      {
+        "marketplace": "メルカリ",
+        "searchUrl": "https://jp.mercari.com/search?keyword=6%E6%9C%885%E6%97%A5%E3%82%88%E3%82%8A%E3%80%8E%E3%83%96%E3%83%AC%E3%82%A4%E3%83%96%E3%83%AA%E3%83%BC%E3%83%87%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88%20%E3%83%95%E3%83%A9%E3%82%A4%E3%83%B3%E3%82%B0%E3%83%95%E3%82%A7%E3%82%A2%E3%83%AA%E3%83%BC%20HD%E3%83%AA%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E3%80%8F%E3%81%AE%23C-pla%E9%99%90%E5%AE%9A%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB%E3%83%88%E3%82%A4%E3%81%8C%E7%99%BA%E5%A3%B2%E9%96%8B%E5%A7%8B%EF%BC%81X%E3%81%A7%E3%81%AF%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%88%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%9A%E3%83%BC%E3%83%B3%E3%82%82%E9%96%8B%E5%82%AC%EF%BC%81&status=sold_out",
+        "sampleCount": 6,
+        "minPriceYen": 3189,
+        "medianPriceYen": 3500,
+        "maxPriceYen": 3900,
+        "updatedAt": "2026-03-01T22:18:39.816165+09:00"
+      }
+    ]
+  },
+  {
+    "id": "rel_6acd2b619d12",
+    "title": "「マトメージュ」が2025年5月よりカプセルトイになって全国の#C-pla限定で販売開始！",
+    "manufacturer": "C-pla（シープラ）",
+    "series": null,
+    "releaseDate": "2025-05-08",
+    "priceYen": 2025,
+    "sourceLabel": "C-pla公式（トーシン）",
+    "sourceUrl": "https://toshin.jpn.com/%e3%80%8c%e3%83%9e%e3%83%88%e3%83%a1%e3%83%bc%e3%82%b8%e3%83%a5%e3%80%8d%e3%81%8c2025%e5%b9%b45%e6%9c%88%e3%82%88%e3%82%8a%e3%82%ab%e3%83%97%e3%82%bb%e3%83%ab%e3%83%88%e3%82%a4%e3%81%ab%e3%81%aa/",
+    "imageUrl": null,
+    "summary": "大人気ヘアワックス「マトメージュ」のまとめ髪スティック「レギュラー」と「スーパーホールド」の２種類がミニチュアになりました！最新の2025年発売バーションはもちろん過去に発売した歴代のデザインも。ラインナップはレギュラー […] The post 「マトメージュ」が2025年5月よりカプセルトイになって全国の#C-pla限定で販売開始！ first appeared on 株式会社トーシン .",
+    "tags": [
+      "新作",
+      "シープラ",
+      "カプセルトイ",
+      "#C-pla",
+      "新商品",
+      "入荷案内",
+      "中古相場"
+    ],
+    "marketPrices": [
+      {
+        "marketplace": "メルカリ",
+        "searchUrl": "https://jp.mercari.com/search?keyword=%E3%80%8C%E3%83%9E%E3%83%88%E3%83%A1%E3%83%BC%E3%82%B8%E3%83%A5%E3%80%8D%E3%81%8C2025%E5%B9%B45%E6%9C%88%E3%82%88%E3%82%8A%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB%E3%83%88%E3%82%A4%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%A6%E5%85%A8%E5%9B%BD%E3%81%AE%23C-pla%E9%99%90%E5%AE%9A%E3%81%A7%E8%B2%A9%E5%A3%B2%E9%96%8B%E5%A7%8B%EF%BC%81&status=sold_out",
+        "sampleCount": 152,
         "minPriceYen": 300,
-        "medianPriceYen": 780,
-        "maxPriceYen": 2500,
-        "updatedAt": "2026-02-27T22:00:00+09:00"
+        "medianPriceYen": 899,
+        "maxPriceYen": 3000,
+        "updatedAt": "2026-03-01T22:18:39.816165+09:00"
       }
     ]
   },
   {
-    "id": "rel_sample_kene_1",
-    "title": "レトロ自販機 ミニチュアコレクション",
-    "manufacturer": "ケンエレファント",
-    "series": "ミニチュア",
-    "releaseDate": "2026-04-01",
-    "priceYen": 500,
-    "sourceLabel": "ケンエレファント",
-    "sourceUrl": "https://kenelephant.co.jp/?p=17360",
+    "id": "rel_d6d138b41f6b",
+    "title": "「専門学生の企画」がカプセルトイ化して全国の#C-pla限定で販売開始！",
+    "manufacturer": "C-pla（シープラ）",
+    "series": null,
+    "releaseDate": "2025-05-07",
+    "priceYen": 300,
+    "sourceLabel": "C-pla公式（トーシン）",
+    "sourceUrl": "https://toshin.jpn.com/%e3%80%8c%e5%b0%82%e9%96%80%e5%ad%a6%e7%94%9f%e3%81%ae%e4%bc%81%e7%94%bb%e3%80%8d%e3%81%8c%e3%82%ab%e3%83%97%e3%82%bb%e3%83%ab%e3%83%88%e3%82%a4%e5%8c%96%e3%81%97%e3%81%a6%e5%85%a8%e5%9b%bd%e3%81%aec/",
     "imageUrl": null,
-    "summary": "公式ニュースから抽出した新規カプセルトイ。",
+    "summary": "全国の#C-plaにて日本工学院八王子専門学校の学生とのコラボ商品を発売いたします！ 日本工学院八王子専門学校の学生たちの新しい視点を基に、日常生活に楽しみと新しい価値を提供するユニークな商品を開発しました。 これらの商 […] The post 「専門学生の企画」がカプセルトイ化して全国の#C-pla限定で販売開始！ first appeared on 株式会社トーシン .",
     "tags": [
       "新作",
-      "ミニチュア",
+      "シープラ",
+      "カプセルトイ",
+      "#C-pla",
+      "新商品",
+      "入荷案内"
+    ],
+    "marketPrices": []
+  },
+  {
+    "id": "rel_3e2369fc2179",
+    "title": "HIGHCARDと#C-plaがコラボ！描き下ろしグッズの発売とノベルティ配布も！",
+    "manufacturer": "C-pla（シープラ）",
+    "series": null,
+    "releaseDate": "2025-03-12",
+    "priceYen": 2025,
+    "sourceLabel": "C-pla公式（トーシン）",
+    "sourceUrl": "https://toshin.jpn.com/highcard%e3%81%a8c-pla%e3%81%8c%e3%82%b3%e3%83%a9%e3%83%9c%ef%bc%81%e6%8f%8f%e3%81%8d%e4%b8%8b%e3%82%8d%e3%81%97%e3%82%b0%e3%83%83%e3%82%ba%e3%81%ae%e7%99%ba%e5%a3%b2%e3%81%a8%e3%83%8e%e3%83%99/",
+    "imageUrl": null,
+    "summary": "2025年3月14日(金)より大人気アニメ「HIGHCARD」とカプセルトイ専門店#C-plaがコラボ！ #C-plaでしか手に入らない限定の商品を販売いたします！ 限定商品はなんとキャラクター原案の「えびも先生」描き下 […] The post HIGHCARDと#C-plaがコラボ！描き下ろしグッズの発売とノベルティ配布も！ first appeared on 株式会社トーシン .",
+    "tags": [
+      "新作",
+      "シープラ",
+      "入荷案内",
+      "新商品",
+      "#C-pla",
+      "カプセルトイ"
+    ],
+    "marketPrices": []
+  },
+  {
+    "id": "rel_8615bc8f3b66",
+    "title": "“スクウェア・エニックスミュージックコレクションキーチェーン”が2月28日より♯C-pla一部店舗で取り扱い開始！",
+    "manufacturer": "C-pla（シープラ）",
+    "series": null,
+    "releaseDate": "2025-02-28",
+    "priceYen": 2024,
+    "sourceLabel": "C-pla公式（トーシン）",
+    "sourceUrl": "https://toshin.jpn.com/%e3%82%b9%e3%82%af%e3%82%a6%e3%82%a7%e3%82%a2%e3%83%bb%e3%82%a8%e3%83%8b%e3%83%83%e3%82%af%e3%82%b9%e3%83%9f%e3%83%a5%e3%83%bc%e3%82%b8%e3%83%83%e3%82%af%e3%82%b3%e3%83%ac%e3%82%af%e3%82%b7/",
+    "imageUrl": null,
+    "summary": "東京ゲームショウ2024で大好評だった「スクウェア・エニックスミュージックコレクションキーチェーン」を♯C-plaの一部店舗でお取り扱いいたします！ 人気の音楽アルバム10作がミニチュアになりました！ なんとNFCタグが […] The post “スクウェア・エニックスミュージックコレクションキーチェーン”が2月28日より♯C-pla一部店舗で取り扱い開始！ first appeared on 株式会社トーシン .",
+    "tags": [
+      "新作",
+      "シープラ",
+      "カプセルトイ",
+      "入荷案内",
+      "新商品",
+      "#C-pla",
       "中古相場"
     ],
     "marketPrices": [
       {
-        "marketplace": "Yahoo!フリマ",
-        "searchUrl": "https://paypayfleamarket.yahoo.co.jp/search/%E3%83%AC%E3%83%88%E3%83%AD%E8%87%AA%E8%B2%A9%E6%A9%9F%20%E3%83%9F%E3%83%8B%E3%83%81%E3%83%A5%E3%82%A2%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3",
-        "sampleCount": 8,
-        "minPriceYen": 450,
-        "medianPriceYen": 980,
-        "maxPriceYen": 2980,
-        "updatedAt": "2026-02-27T22:00:00+09:00"
+        "marketplace": "メルカリ",
+        "searchUrl": "https://jp.mercari.com/search?keyword=%E2%80%9C%E3%82%B9%E3%82%AF%E3%82%A6%E3%82%A7%E3%82%A2%E3%83%BB%E3%82%A8%E3%83%8B%E3%83%83%E3%82%AF%E3%82%B9%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%83%E3%82%AF%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%AD%E3%83%BC%E3%83%81%E3%82%A7%E3%83%BC%E3%83%B3%E2%80%9D%E3%81%8C2%E6%9C%8828%E6%97%A5%E3%82%88%E3%82%8A%E2%99%AFC-pla%E4%B8%80%E9%83%A8%E5%BA%97%E8%88%97%E3%81%A7%E5%8F%96%E3%82%8A%E6%89%B1%E3%81%84%E9%96%8B%E5%A7%8B%EF%BC%81&status=sold_out",
+        "sampleCount": 82,
+        "minPriceYen": 300,
+        "medianPriceYen": 1255,
+        "maxPriceYen": 7777,
+        "updatedAt": "2026-03-01T22:18:39.816165+09:00"
+      }
+    ]
+  },
+  {
+    "id": "rel_9d0f193b6312",
+    "title": "SNOW MIKU 2025と＃C-plaがコラボ！2月4日(火)より北海道店舗にてコラボキャンペーン開催！限定商品やノベルティ配布も！",
+    "manufacturer": "C-pla（シープラ）",
+    "series": null,
+    "releaseDate": "2025-02-01",
+    "priceYen": 2025,
+    "sourceLabel": "C-pla公式（トーシン）",
+    "sourceUrl": "https://toshin.jpn.com/snow-miku-2025%e3%81%a8%ef%bc%83c-pla%e3%81%8c%e3%82%b3%e3%83%a9%e3%83%9c%ef%bc%812%e6%9c%884%e6%97%a5%e7%81%ab%e3%82%88%e3%82%8a%e5%8c%97%e6%b5%b7%e9%81%93%e5%ba%97%e8%88%97%e3%81%ab%e3%81%a6/",
+    "imageUrl": null,
+    "summary": "今年も＃C-plaと「SNOW MIKU 2025」がコラボ決定！！ 北海道内店舗にて＃C-pla限定の、SNOW MIKU 2025ラバーキーチェーンが登場！ （全6種）を先行発売いたします！ また一部店舗では、購入特 […] The post SNOW MIKU 2025と＃C-plaがコラボ！2月4日(火)より北海道店舗にてコラボキャンペーン開催！限定商品やノベルティ配布も！ first appeared on 株式会社トーシン .",
+    "tags": [
+      "新作",
+      "シープラ",
+      "カプセルトイ",
+      "新商品",
+      "入荷案内",
+      "#C-pla",
+      "中古相場"
+    ],
+    "marketPrices": [
+      {
+        "marketplace": "メルカリ",
+        "searchUrl": "https://jp.mercari.com/search?keyword=SNOW%20MIKU%202025%E3%81%A8%EF%BC%83C-pla%E3%81%8C%E3%82%B3%E3%83%A9%E3%83%9C%EF%BC%812%E6%9C%884%E6%97%A5%28%E7%81%AB%29%E3%82%88%E3%82%8A%E5%8C%97%E6%B5%B7%E9%81%93%E5%BA%97%E8%88%97%E3%81%AB%E3%81%A6%E3%82%B3%E3%83%A9%E3%83%9C%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%9A%E3%83%BC%E3%83%B3%E9%96%8B%E5%82%AC%EF%BC%81%E9%99%90%E5%AE%9A%E5%95%86%E5%93%81%E3%82%84%E3%83%8E%E3%83%99%E3%83%AB%E3%83%86%E3%82%A3%E9%85%8D%E5%B8%83%E3%82%82%EF%BC%81&status=sold_out",
+        "sampleCount": 138,
+        "minPriceYen": 300,
+        "medianPriceYen": 1050,
+        "maxPriceYen": 10500,
+        "updatedAt": "2026-03-01T22:18:39.816165+09:00"
+      }
+    ]
+  },
+  {
+    "id": "rel_43ec5a84837c",
+    "title": "12月11日より全国の＃C-plaでも“ファイナルファンタジー ピクセルリマスター”のカプセルトイが取り扱い開始！",
+    "manufacturer": "C-pla（シープラ）",
+    "series": null,
+    "releaseDate": "2024-12-11",
+    "priceYen": 400,
+    "sourceLabel": "C-pla公式（トーシン）",
+    "sourceUrl": "https://toshin.jpn.com/12%e6%9c%8811%e6%97%a5%e3%82%88%e3%82%8a%e5%85%a8%e5%9b%bd%e3%81%ae%ef%bc%83c-pla%e3%81%a7%e3%82%82%e3%83%95%e3%82%a1%e3%82%a4%e3%83%8a%e3%83%ab%e3%83%95%e3%82%a1%e3%83%b3%e3%82%bf%e3%82%b8/",
+    "imageUrl": null,
+    "summary": "初期のドット絵時代のファイナルファンタジーシリーズ(FF1～FF6)を現代の技術でリマスター化した作品群『FFピクセルリマスター』より、各登場キャラクターのアクリルスタンドがカプセルトイで販売！ 全国の#C-plaでもお […] The post 12月11日より全国の＃C-plaでも“ファイナルファンタジー ピクセルリマスター”のカプセルトイが取り扱い開始！ first appeared on 株式会社トーシン .",
+    "tags": [
+      "新作",
+      "シープラ",
+      "カプセルトイ",
+      "#C-pla",
+      "新商品",
+      "入荷案内",
+      "中古相場"
+    ],
+    "marketPrices": [
+      {
+        "marketplace": "メルカリ",
+        "searchUrl": "https://jp.mercari.com/search?keyword=12%E6%9C%8811%E6%97%A5%E3%82%88%E3%82%8A%E5%85%A8%E5%9B%BD%E3%81%AE%EF%BC%83C-pla%E3%81%A7%E3%82%82%E2%80%9C%E3%83%95%E3%82%A1%E3%82%A4%E3%83%8A%E3%83%AB%E3%83%95%E3%82%A1%E3%83%B3%E3%82%BF%E3%82%B8%E3%83%BC%20%E3%83%94%E3%82%AF%E3%82%BB%E3%83%AB%E3%83%AA%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E2%80%9D%E3%81%AE%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB%E3%83%88%E3%82%A4%E3%81%8C%E5%8F%96%E3%82%8A%E6%89%B1%E3%81%84%E9%96%8B%E5%A7%8B%EF%BC%81&status=sold_out",
+        "sampleCount": 5,
+        "minPriceYen": 300,
+        "medianPriceYen": 400,
+        "maxPriceYen": 1900,
+        "updatedAt": "2026-03-01T22:18:39.816165+09:00"
+      }
+    ]
+  },
+  {
+    "id": "rel_596735d7daac",
+    "title": "美容水から生まれたMIZUシャンプー『ululis』が＃C-pla限定でカプセルトイになって8月に登場！プレゼントキャンペーンも開催します！",
+    "manufacturer": "C-pla（シープラ）",
+    "series": null,
+    "releaseDate": "2024-08-15",
+    "priceYen": 400,
+    "sourceLabel": "C-pla公式（トーシン）",
+    "sourceUrl": "https://toshin.jpn.com/%e7%be%8e%e5%ae%b9%e6%b0%b4%e3%81%8b%e3%82%89%e7%94%9f%e3%81%be%e3%82%8c%e3%81%9fmizu%e3%82%b7%e3%83%a3%e3%83%b3%e3%83%97%e3%83%bc%e3%80%8eululis%e3%80%8f%e3%81%8c%ef%bc%83c-pla%e9%99%90%e5%ae%9a/",
+    "imageUrl": null,
+    "summary": "美容水から生まれた MIZUシャンプー「ululis(ウルリス)」（株式会社H2O）とクリエイター集団UJITAがコラボ！ 幅広い世代の女性に大人気の「ululis」がカプセルトイになって#C-pla限定で8月下旬ごろに […] The post 美容水から生まれたMIZUシャンプー『ululis』が＃C-pla限定でカプセルトイになって8月に登場！プレゼントキャンペーンも開催します！ first appeared on 株式会社トーシン .",
+    "tags": [
+      "新作",
+      "シープラ",
+      "#C-pla",
+      "入荷案内",
+      "新商品",
+      "カプセルトイ",
+      "中古相場"
+    ],
+    "marketPrices": [
+      {
+        "marketplace": "メルカリ",
+        "searchUrl": "https://jp.mercari.com/search?keyword=%E7%BE%8E%E5%AE%B9%E6%B0%B4%E3%81%8B%E3%82%89%E7%94%9F%E3%81%BE%E3%82%8C%E3%81%9FMIZU%E3%82%B7%E3%83%A3%E3%83%B3%E3%83%97%E3%83%BC%E3%80%8Eululis%E3%80%8F%E3%81%8C%EF%BC%83C-pla%E9%99%90%E5%AE%9A%E3%81%A7%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB%E3%83%88%E3%82%A4%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%A68%E6%9C%88%E3%81%AB%E7%99%BB%E5%A0%B4%EF%BC%81%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%88%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%9A%E3%83%BC%E3%83%B3%E3%82%82%E9%96%8B%E5%82%AC%E3%81%97%E3%81%BE%E3%81%99%EF%BC%81&status=sold_out",
+        "sampleCount": 14,
+        "minPriceYen": 790,
+        "medianPriceYen": 2499,
+        "maxPriceYen": 4200,
+        "updatedAt": "2026-03-01T22:18:39.816165+09:00"
       }
     ]
   }

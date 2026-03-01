@@ -6,12 +6,19 @@ import json
 import re
 import statistics
 import time
+from base64 import urlsafe_b64encode
 from datetime import datetime, timedelta, timezone
+from email.utils import parsedate_to_datetime
 from pathlib import Path
 from urllib.parse import parse_qs, quote, unquote, urlparse
+from uuid import uuid4
+from xml.etree import ElementTree as ET
 
 import requests
 from bs4 import BeautifulSoup
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.asymmetric import ec
+from cryptography.hazmat.primitives.asymmetric.utils import decode_dss_signature
 
 HEADERS = {
     "User-Agent": (
@@ -59,6 +66,17 @@ MANUFACTURER_QUERIES = [
     },
 ]
 
+CPLA_RSS_SOURCES = [
+    {
+        "name": "新商品",
+        "url": "https://toshin.jpn.com/search/%E6%96%B0%E5%95%86%E5%93%81/feed/rss2/",
+    },
+    {
+        "name": "入荷案内",
+        "url": "https://toshin.jpn.com/search/%E5%85%A5%E8%8D%B7%E6%A1%88%E5%86%85/feed/rss2/",
+    },
+]
+
 X_KEYWORDS = [
     "ガシャポン 新商品",
     "ガチャ 新作",
@@ -69,14 +87,16 @@ X_KEYWORDS = [
 
 MARKETPLACE_SPECS = [
     {
-        "name": "メルカリ",
-        "domain": "jp.mercari.com",
-    },
-    {
         "name": "Yahoo!フリマ",
         "domain": "paypayfleamarket.yahoo.co.jp",
     },
 ]
+
+MERCARI_API_URL = "https://api.mercari.jp/v2/entities:search"
+MERCARI_ACCEPTED_STATUSES = {"ITEM_STATUS_SOLD_OUT", "ITEM_STATUS_TRADING"}
+MERCARI_PAGE_SIZE = 120
+MERCARI_MAX_PAGES = 2
+MERCARI_SKIP_TOKENS = {"ガチャ", "ガシャポン", "カプセルトイ", "新作", "新商品"}
 
 DATE_WITH_YEAR = re.compile(
     r"(20\d{2})\s*[./\-年]\s*(\d{1,2})\s*[./\-月]\s*(\d{1,2})\s*(?:日)?"
@@ -111,6 +131,121 @@ def clean_text(value: str | None) -> str:
 def build_id(prefix: str, value: str) -> str:
     hash_id = hashlib.md5(value.encode("utf-8")).hexdigest()[:12]
     return f"{prefix}_{hash_id}"
+
+
+def to_base64url(value: bytes) -> str:
+    return urlsafe_b64encode(value).rstrip(b"=").decode("ascii")
+
+
+def parse_rss_pub_date(value: str | None) -> datetime | None:
+    if not value:
+        return None
+    try:
+        parsed = parsedate_to_datetime(value)
+    except Exception:
+        return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(JST)
+
+
+def build_mercari_dpop_token(url: str, method: str = "POST") -> str:
+    key = ec.generate_private_key(ec.SECP256R1())
+    public_numbers = key.public_key().public_numbers()
+    header = {
+        "typ": "dpop+jwt",
+        "alg": "ES256",
+        "jwk": {
+            "kty": "EC",
+            "crv": "P-256",
+            "x": to_base64url(public_numbers.x.to_bytes(32, "big")),
+            "y": to_base64url(public_numbers.y.to_bytes(32, "big")),
+        },
+    }
+    payload = {
+        "iat": int(time.time()),
+        "jti": str(uuid4()),
+        "htu": url,
+        "htm": method.upper(),
+        "uuid": str(uuid4()),
+    }
+
+    encoded_header = to_base64url(json.dumps(header, separators=(",", ":")).encode("utf-8"))
+    encoded_payload = to_base64url(json.dumps(payload, separators=(",", ":")).encode("utf-8"))
+    signing_input = f"{encoded_header}.{encoded_payload}"
+    der_signature = key.sign(signing_input.encode("utf-8"), ec.ECDSA(hashes.SHA256()))
+    r_value, s_value = decode_dss_signature(der_signature)
+    raw_signature = r_value.to_bytes(32, "big") + s_value.to_bytes(32, "big")
+    return f"{signing_input}.{to_base64url(raw_signature)}"
+
+
+def post_mercari_json(payload: dict) -> dict | None:
+    headers = {
+        **HEADERS,
+        "X-Platform": "web",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Accept": "application/json",
+        "Accept-Language": "ja",
+        "X-Country-Code": "JP",
+        "DPoP": build_mercari_dpop_token(MERCARI_API_URL, method="POST"),
+    }
+    body = json.dumps(payload, separators=(",", ":"), ensure_ascii=False).encode("utf-8")
+    response = requests.post(MERCARI_API_URL, headers=headers, data=body, timeout=TIMEOUT_SECONDS)
+    if response.status_code != 200:
+        return None
+    try:
+        return response.json()
+    except Exception:
+        return None
+
+
+def compact_text_for_match(value: str) -> str:
+    lowered = clean_text(value).lower()
+    return re.sub(r"[^\wぁ-んァ-ン一-龯ー]+", "", lowered)
+
+
+def tokenize_market_keyword(value: str) -> list[str]:
+    tokens = []
+    for token in re.split(r"[\s・/|｜,，。]+", clean_text(value)):
+        normalized = compact_text_for_match(token)
+        if len(normalized) < 2:
+            continue
+        if normalized in MERCARI_SKIP_TOKENS:
+            continue
+        tokens.append(normalized)
+    return tokens
+
+
+def optimize_market_keyword(value: str) -> str:
+    text = value
+    text = re.sub(r"[#＃]\s*c-pla", " ", text, flags=re.IGNORECASE)
+    text = re.sub(r"[『「【](.*?)[』」】]", r" \1 ", text)
+    text = re.sub(
+        r"(が|を|で).{0,32}(販売開始|発売開始|販売|発売|登場|取扱い|取り扱い|開始|配布|開催).*",
+        "",
+        text,
+    )
+    text = re.sub(r"(より|にて|まで).*", "", text)
+    text = clean_text(re.sub(r"[！!。]", " ", text))
+    if len(text) > 32:
+        text = text[:32]
+    return text
+
+
+def mercari_title_matches_keyword(title: str, keyword: str) -> bool:
+    compact_title = compact_text_for_match(title)
+    compact_keyword = compact_text_for_match(keyword)
+    if not compact_title or not compact_keyword:
+        return False
+    if compact_keyword in compact_title:
+        return True
+
+    keyword_tokens = tokenize_market_keyword(keyword)
+    if not keyword_tokens:
+        return compact_keyword in compact_title
+
+    hit_count = sum(1 for token in keyword_tokens if token in compact_title)
+    return hit_count >= max(1, len(keyword_tokens) // 2)
 
 
 def fetch_html(url: str) -> str:
@@ -339,17 +474,235 @@ def build_release_entry(item: dict, spec: dict, now: datetime) -> dict:
     }
 
 
+def parse_rss_items(url: str) -> list[dict]:
+    try:
+        response = requests.get(url, headers=HEADERS, timeout=TIMEOUT_SECONDS)
+        response.raise_for_status()
+        root = ET.fromstring(response.content)
+    except Exception:
+        return []
+
+    items = []
+    for node in root.findall("./channel/item"):
+        title = clean_text(node.findtext("title"))
+        link = clean_text(node.findtext("link"))
+        description = clean_text(strip_html(node.findtext("description") or ""))
+        content_text = ""
+        for child in list(node):
+            if child.tag.endswith("encoded"):
+                content_text = clean_text(strip_html(child.text or ""))
+                break
+        pub_date_raw = clean_text(node.findtext("pubDate"))
+        categories = [clean_text(category.text) for category in node.findall("category")]
+        if title and link:
+            items.append(
+                {
+                    "title": title,
+                    "url": link,
+                    "description": description,
+                    "content": content_text,
+                    "pubDateRaw": pub_date_raw,
+                    "categories": [value for value in categories if value],
+                }
+            )
+    return items
+
+
+def build_cpla_release_entry(item: dict, now: datetime) -> dict:
+    combined = clean_text(f"{item['title']} {item['description']} {item['content']}")
+    pub_date = parse_rss_pub_date(item.get("pubDateRaw"))
+    reference_date = pub_date or now
+    date_candidates = extract_date_candidates(combined, reference_date)
+    if pub_date:
+        date_candidates.append(pub_date)
+    release_date = select_release_date(date_candidates, reference_date)
+    if pub_date and release_date and release_date > pub_date + timedelta(days=180):
+        release_date = pub_date
+    price = extract_price_yen(combined)
+
+    tags = ["新作", "シープラ"]
+    for tag in item.get("categories", []):
+        if tag in {"新商品", "入荷案内", "#C-pla", "カプセルトイ"} and tag not in tags:
+            tags.append(tag)
+
+    return {
+        "id": build_id("rel", item["url"]),
+        "title": item["title"],
+        "manufacturer": "C-pla（シープラ）",
+        "series": infer_series(combined),
+        "releaseDate": release_date.strftime("%Y-%m-%d") if release_date else None,
+        "priceYen": price,
+        "sourceLabel": "C-pla公式（トーシン）",
+        "sourceUrl": item["url"],
+        "imageUrl": None,
+        "summary": item["description"] or item["title"],
+        "tags": tags,
+        "marketPrices": [],
+    }
+
+
+def collect_cpla_releases(now: datetime) -> list[dict]:
+    releases = []
+    seen_urls = set()
+    for source in CPLA_RSS_SOURCES:
+        for item in parse_rss_items(source["url"]):
+            url = item["url"]
+            if url in seen_urls:
+                continue
+            combined = clean_text(f"{item['title']} {' '.join(item.get('categories', []))}")
+            if "c-pla" not in combined.lower() and "#c-pla" not in combined.lower():
+                continue
+            if not is_live_url(url):
+                continue
+
+            entry = build_cpla_release_entry(item, now)
+            releases.append(entry)
+            seen_urls.add(url)
+        time.sleep(0.3)
+
+    return releases
+
+
 def build_market_search_url(marketplace_name: str, product_name: str) -> str:
     encoded = quote(product_name)
     if marketplace_name == "メルカリ":
-        return f"https://jp.mercari.com/search?keyword={encoded}"
+        return f"https://jp.mercari.com/search?keyword={encoded}&status=sold_out"
     if marketplace_name == "Yahoo!フリマ":
         return f"https://paypayfleamarket.yahoo.co.jp/search/{encoded}"
     return f"https://duckduckgo.com/?q={encoded}"
 
 
+def build_mercari_search_request(keyword: str, page_token: str | None = None) -> dict:
+    return {
+        "userId": "",
+        "pageSize": MERCARI_PAGE_SIZE,
+        "pageToken": page_token or "",
+        "searchSessionId": str(uuid4()),
+        "indexRouting": "INDEX_ROUTING_UNSPECIFIED",
+        "thumbnailTypes": [],
+        "searchCondition": {
+            "keyword": keyword,
+            "excludeKeyword": "",
+            "sort": "SORT_SCORE",
+            "order": "ORDER_DESC",
+            "status": ["STATUS_SOLD_OUT", "STATUS_TRADING"],
+            "sizeId": [],
+            "categoryId": [],
+            "brandId": [],
+            "sellerId": [],
+            "priceMin": 0,
+            "priceMax": 0,
+            "itemConditionId": [],
+            "shippingPayerId": [],
+            "shippingFromArea": [],
+            "shippingMethod": [],
+            "colorId": [],
+            "hasCoupon": False,
+            "attributes": [],
+            "itemTypes": [],
+            "skuIds": [],
+            "shopIds": [],
+            "excludeShippingMethodIds": [],
+        },
+        "serviceFrom": "suruga",
+        "withItemBrand": True,
+        "withItemSize": False,
+        "withItemPromotions": True,
+        "withItemSizes": True,
+        "withShopname": False,
+        "useDynamicAttribute": True,
+        "withSuggestedItems": True,
+        "withOfferPricePromotion": True,
+        "withProductSuggest": True,
+        "withParentProducts": False,
+        "withProductArticles": True,
+        "withSearchConditionId": False,
+        "withAuction": True,
+        "laplaceDeviceUuid": str(uuid4()),
+    }
+
+
+def collect_mercari_sold_prices(keyword: str, match_keyword: str) -> list[int]:
+    prices = []
+    seen_item_ids = set()
+    page_token = ""
+
+    for _ in range(MERCARI_MAX_PAGES):
+        request_payload = build_mercari_search_request(keyword, page_token=page_token)
+        payload = post_mercari_json(request_payload)
+        if not payload:
+            break
+
+        items = payload.get("items")
+        if not isinstance(items, list):
+            break
+
+        for item in items:
+            if not isinstance(item, dict):
+                continue
+            item_id = clean_text(str(item.get("id") or ""))
+            if item_id and item_id in seen_item_ids:
+                continue
+
+            status = clean_text(str(item.get("status") or ""))
+            if status not in MERCARI_ACCEPTED_STATUSES:
+                continue
+
+            item_name = clean_text(str(item.get("name") or ""))
+            if not (
+                mercari_title_matches_keyword(item_name, keyword)
+                or mercari_title_matches_keyword(item_name, match_keyword)
+            ):
+                continue
+
+            try:
+                price_value = int(str(item.get("price") or "").replace(",", ""))
+            except ValueError:
+                continue
+            if 100 <= price_value <= 200000:
+                prices.append(price_value)
+                if item_id:
+                    seen_item_ids.add(item_id)
+
+        meta = payload.get("meta") if isinstance(payload, dict) else None
+        next_page_token = ""
+        if isinstance(meta, dict):
+            next_page_token = clean_text(str(meta.get("nextPageToken") or ""))
+
+        if not next_page_token:
+            break
+        page_token = next_page_token
+        time.sleep(0.25)
+
+    return prices
+
+
 def collect_market_prices_for_keyword(product_name: str, now: datetime) -> list[dict]:
     outputs = []
+
+    search_keyword = optimize_market_keyword(product_name)
+    mercari_prices = collect_mercari_sold_prices(search_keyword, product_name)
+    if not mercari_prices and search_keyword != product_name:
+        mercari_prices = collect_mercari_sold_prices(product_name, product_name)
+    if not mercari_prices:
+        short_keyword = clean_text(product_name)[:14]
+        if short_keyword and short_keyword not in {search_keyword, product_name}:
+            mercari_prices = collect_mercari_sold_prices(short_keyword, product_name)
+
+    if mercari_prices:
+        mercari_prices.sort()
+        outputs.append(
+            {
+                "marketplace": "メルカリ",
+                "searchUrl": build_market_search_url("メルカリ", product_name),
+                "sampleCount": len(mercari_prices),
+                "minPriceYen": mercari_prices[0],
+                "medianPriceYen": int(statistics.median(mercari_prices)),
+                "maxPriceYen": mercari_prices[-1],
+                "updatedAt": now.isoformat(),
+            }
+        )
+
     for spec in MARKETPLACE_SPECS:
         query = f"site:{spec['domain']} {product_name}"
         try:
@@ -434,17 +787,26 @@ def collect_releases() -> list[dict]:
             seen_urls.add(url)
 
             entry = build_release_entry(item, spec, now)
+            if entry["releaseDate"] is None and entry["priceYen"] is None:
+                continue
             releases.append(entry)
 
         time.sleep(0.5)
 
-    enrich_release_market_prices(releases, now)
+    for entry in collect_cpla_releases(now):
+        source_url = entry["sourceUrl"]
+        if source_url in seen_urls:
+            continue
+        seen_urls.add(source_url)
+        releases.append(entry)
 
     releases.sort(
         key=lambda item: (item["releaseDate"] is None, item["releaseDate"] or "", item["title"]),
         reverse=True,
     )
-    return releases[:200]
+    releases = releases[:120]
+    enrich_release_market_prices(releases, now)
+    return releases
 
 
 def search_yahoo_realtime(keyword: str, max_urls: int = 40) -> list[dict]:
@@ -576,7 +938,7 @@ def seed_releases() -> list[dict]:
             "marketPrices": [
                 {
                     "marketplace": "メルカリ",
-                    "searchUrl": "https://jp.mercari.com/search?keyword=%E3%82%B5%E3%83%B3%E3%83%AA%E3%82%AA%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC%E3%82%BA%20%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB%E3%83%A9%E3%83%90%E3%83%BC%E3%83%9E%E3%82%B9%E3%82%B3%E3%83%83%E3%83%88",
+                    "searchUrl": "https://jp.mercari.com/search?keyword=%E3%82%B5%E3%83%B3%E3%83%AA%E3%82%AA%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC%E3%82%BA%20%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB%E3%83%A9%E3%83%90%E3%83%BC%E3%83%9E%E3%82%B9%E3%82%B3%E3%83%83%E3%83%88&status=sold_out",
                     "sampleCount": 12,
                     "minPriceYen": 300,
                     "medianPriceYen": 680,

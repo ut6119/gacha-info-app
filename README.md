@@ -15,8 +15,9 @@
 ## データ取得元
 
 - メーカー系: DuckDuckGo検索経由で `gashapon.jp` / `takaratomy-arts.co.jp` / `kenelephant.co.jp` などを巡回
+- C-pla系: `toshin.jpn.com` の新商品/入荷案内RSS（公式記事URL）
 - X系: Yahoo!リアルタイム検索で `x.com` / `twitter.com` 投稿URLを抽出
-- 中古相場: DuckDuckGo検索経由で `jp.mercari.com` / `paypayfleamarket.yahoo.co.jp` を集計
+- 中古相場: メルカリ `sold_out` 検索APIを商品名で集計（補助としてYahoo!フリマ検索も併用）
 
 ## セットアップ
 
