@@ -46,7 +46,7 @@
         "minPriceYen": 400,
         "medianPriceYen": 1800,
         "maxPriceYen": 8888,
-        "updatedAt": "2026-04-20T19:53:20.106761+09:00"
+        "updatedAt": "2026-04-20T22:57:00.933917+09:00"
       }
     ]
   },
@@ -78,7 +78,7 @@
         "minPriceYen": 400,
         "medianPriceYen": 400,
         "maxPriceYen": 400,
-        "updatedAt": "2026-04-20T19:53:20.106761+09:00"
+        "updatedAt": "2026-04-20T22:57:00.933917+09:00"
       }
     ]
   },
@@ -125,10 +125,10 @@
         "marketplace": "メルカリ",
         "searchUrl": "https://jp.mercari.com/search?keyword=6%E6%9C%885%E6%97%A5%E3%82%88%E3%82%8A%E3%80%8E%E3%83%96%E3%83%AC%E3%82%A4%E3%83%96%E3%83%AA%E3%83%BC%E3%83%87%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88%20%E3%83%95%E3%83%A9%E3%82%A4%E3%83%B3%E3%82%B0%E3%83%95%E3%82%A7%E3%82%A2%E3%83%AA%E3%83%BC%20HD%E3%83%AA%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E3%80%8F%E3%81%AE%23C-pla%E9%99%90%E5%AE%9A%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB%E3%83%88%E3%82%A4%E3%81%8C%E7%99%BA%E5%A3%B2%E9%96%8B%E5%A7%8B%EF%BC%81X%E3%81%A7%E3%81%AF%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%88%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%9A%E3%83%BC%E3%83%B3%E3%82%82%E9%96%8B%E5%82%AC%EF%BC%81&status=sold_out",
         "sampleCount": 25,
-        "minPriceYen": 350,
-        "medianPriceYen": 3200,
+        "minPriceYen": 300,
+        "medianPriceYen": 3400,
         "maxPriceYen": 5930,
-        "updatedAt": "2026-04-20T19:53:20.106761+09:00"
+        "updatedAt": "2026-04-20T22:57:00.933917+09:00"
       }
     ]
   },
@@ -156,11 +156,11 @@
       {
         "marketplace": "メルカリ",
         "searchUrl": "https://jp.mercari.com/search?keyword=%E3%80%8C%E3%83%9E%E3%83%88%E3%83%A1%E3%83%BC%E3%82%B8%E3%83%A5%E3%80%8D%E3%81%8C2025%E5%B9%B45%E6%9C%88%E3%82%88%E3%82%8A%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB%E3%83%88%E3%82%A4%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%A6%E5%85%A8%E5%9B%BD%E3%81%AE%23C-pla%E9%99%90%E5%AE%9A%E3%81%A7%E8%B2%A9%E5%A3%B2%E9%96%8B%E5%A7%8B%EF%BC%81&status=sold_out",
-        "sampleCount": 163,
+        "sampleCount": 161,
         "minPriceYen": 300,
         "medianPriceYen": 800,
         "maxPriceYen": 5000,
-        "updatedAt": "2026-04-20T19:53:20.106761+09:00"
+        "updatedAt": "2026-04-20T22:57:00.933917+09:00"
       }
     ]
   },
@@ -234,7 +234,7 @@
         "minPriceYen": 300,
         "medianPriceYen": 1300,
         "maxPriceYen": 7777,
-        "updatedAt": "2026-04-20T19:53:20.106761+09:00"
+        "updatedAt": "2026-04-20T22:57:00.933917+09:00"
       }
     ]
   },
@@ -266,7 +266,7 @@
         "minPriceYen": 300,
         "medianPriceYen": 1295,
         "maxPriceYen": 25000,
-        "updatedAt": "2026-04-20T19:53:20.106761+09:00"
+        "updatedAt": "2026-04-20T22:57:00.933917+09:00"
       }
     ]
   },
@@ -298,7 +298,7 @@
         "minPriceYen": 570,
         "medianPriceYen": 570,
         "maxPriceYen": 570,
-        "updatedAt": "2026-04-20T19:53:20.106761+09:00"
+        "updatedAt": "2026-04-20T22:57:00.933917+09:00"
       }
     ]
   },
@@ -330,7 +330,7 @@
         "minPriceYen": 790,
         "medianPriceYen": 2299,
         "maxPriceYen": 4180,
-        "updatedAt": "2026-04-20T19:53:20.106761+09:00"
+        "updatedAt": "2026-04-20T22:57:00.933917+09:00"
       }
     ]
   }
