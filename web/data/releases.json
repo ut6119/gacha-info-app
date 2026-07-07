@@ -46,7 +46,7 @@
         "minPriceYen": 300,
         "medianPriceYen": 499,
         "maxPriceYen": 699,
-        "updatedAt": "2026-07-07T07:18:23.205949+09:00"
+        "updatedAt": "2026-07-07T12:55:49.838313+09:00"
       }
     ]
   },
@@ -117,7 +117,7 @@
         "minPriceYen": 3500,
         "medianPriceYen": 3500,
         "maxPriceYen": 5000,
-        "updatedAt": "2026-07-07T07:18:23.205949+09:00"
+        "updatedAt": "2026-07-07T12:55:49.838313+09:00"
       }
     ]
   },
@@ -149,7 +149,7 @@
         "minPriceYen": 300,
         "medianPriceYen": 785,
         "maxPriceYen": 3750,
-        "updatedAt": "2026-07-07T07:18:23.205949+09:00"
+        "updatedAt": "2026-07-07T12:55:49.838313+09:00"
       }
     ]
   },
@@ -219,11 +219,11 @@
       {
         "marketplace": "メルカリ",
         "searchUrl": "https://jp.mercari.com/search?keyword=%E2%80%9C%E3%82%B9%E3%82%AF%E3%82%A6%E3%82%A7%E3%82%A2%E3%83%BB%E3%82%A8%E3%83%8B%E3%83%83%E3%82%AF%E3%82%B9%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%83%E3%82%AF%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%AD%E3%83%BC%E3%83%81%E3%82%A7%E3%83%BC%E3%83%B3%E2%80%9D%E3%81%8C2%E6%9C%8828%E6%97%A5%E3%82%88%E3%82%8A%E2%99%AFC-pla%E4%B8%80%E9%83%A8%E5%BA%97%E8%88%97%E3%81%A7%E5%8F%96%E3%82%8A%E6%89%B1%E3%81%84%E9%96%8B%E5%A7%8B%EF%BC%81&status=sold_out",
-        "sampleCount": 78,
+        "sampleCount": 65,
         "minPriceYen": 300,
-        "medianPriceYen": 1025,
-        "maxPriceYen": 5000,
-        "updatedAt": "2026-07-07T07:18:23.205949+09:00"
+        "medianPriceYen": 1050,
+        "maxPriceYen": 4200,
+        "updatedAt": "2026-07-07T12:55:49.838313+09:00"
       }
     ]
   },
@@ -255,7 +255,7 @@
         "minPriceYen": 300,
         "medianPriceYen": 1300,
         "maxPriceYen": 25000,
-        "updatedAt": "2026-07-07T07:18:23.205949+09:00"
+        "updatedAt": "2026-07-07T12:55:49.838313+09:00"
       }
     ]
   },
@@ -308,7 +308,7 @@
         "minPriceYen": 999,
         "medianPriceYen": 2499,
         "maxPriceYen": 3100,
-        "updatedAt": "2026-07-07T07:18:23.205949+09:00"
+        "updatedAt": "2026-07-07T12:55:49.838313+09:00"
       }
     ]
   }
