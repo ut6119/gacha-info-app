@@ -45,8 +45,8 @@
         "sampleCount": 5,
         "minPriceYen": 400,
         "medianPriceYen": 500,
-        "maxPriceYen": 1500,
-        "updatedAt": "2026-07-21T01:26:59.861507+09:00"
+        "maxPriceYen": 1400,
+        "updatedAt": "2026-07-21T04:48:37.617933+09:00"
       }
     ]
   },
@@ -117,7 +117,7 @@
         "minPriceYen": 500,
         "medianPriceYen": 600,
         "maxPriceYen": 699,
-        "updatedAt": "2026-07-21T01:26:59.861507+09:00"
+        "updatedAt": "2026-07-21T04:48:37.617933+09:00"
       }
     ]
   },
@@ -149,7 +149,7 @@
         "minPriceYen": 300,
         "medianPriceYen": 800,
         "maxPriceYen": 3680,
-        "updatedAt": "2026-07-21T01:26:59.861507+09:00"
+        "updatedAt": "2026-07-21T04:48:37.617933+09:00"
       }
     ]
   },
@@ -223,7 +223,7 @@
         "minPriceYen": 300,
         "medianPriceYen": 1025,
         "maxPriceYen": 5000,
-        "updatedAt": "2026-07-21T01:26:59.861507+09:00"
+        "updatedAt": "2026-07-21T04:48:37.617933+09:00"
       }
     ]
   },
@@ -255,7 +255,7 @@
         "minPriceYen": 300,
         "medianPriceYen": 1200,
         "maxPriceYen": 25000,
-        "updatedAt": "2026-07-21T01:26:59.861507+09:00"
+        "updatedAt": "2026-07-21T04:48:37.617933+09:00"
       }
     ]
   },
@@ -287,7 +287,7 @@
         "minPriceYen": 650,
         "medianPriceYen": 1300,
         "maxPriceYen": 1950,
-        "updatedAt": "2026-07-21T01:26:59.861507+09:00"
+        "updatedAt": "2026-07-21T04:48:37.617933+09:00"
       }
     ]
   },
@@ -316,10 +316,10 @@
         "marketplace": "メルカリ",
         "searchUrl": "https://jp.mercari.com/search?keyword=%E7%BE%8E%E5%AE%B9%E6%B0%B4%E3%81%8B%E3%82%89%E7%94%9F%E3%81%BE%E3%82%8C%E3%81%9FMIZU%E3%82%B7%E3%83%A3%E3%83%B3%E3%83%97%E3%83%BC%E3%80%8Eululis%E3%80%8F%E3%81%8C%EF%BC%83C-pla%E9%99%90%E5%AE%9A%E3%81%A7%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB%E3%83%88%E3%82%A4%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%A68%E6%9C%88%E3%81%AB%E7%99%BB%E5%A0%B4%EF%BC%81%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%88%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%9A%E3%83%BC%E3%83%B3%E3%82%82%E9%96%8B%E5%82%AC%E3%81%97%E3%81%BE%E3%81%99%EF%BC%81&status=sold_out",
         "sampleCount": 32,
-        "minPriceYen": 450,
-        "medianPriceYen": 1849,
+        "minPriceYen": 300,
+        "medianPriceYen": 1839,
         "maxPriceYen": 11500,
-        "updatedAt": "2026-07-21T01:26:59.861507+09:00"
+        "updatedAt": "2026-07-21T04:48:37.617933+09:00"
       }
     ]
   }
